@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="background">
+    <div class="dialog">
+            <div class="dialog__question">
+            Задать вопрос
+            </div>
+        <form class="form">
+            <div class="form__close-button">
+                <span></span>
+                <span></span>
+            </div>
+            <input type="text" placeholder="Ваше имя" required class="form__input">
+            <input type="email" value="test@test.com" class="form__input">
+            <div class="switch__container">
+                <span class="switch__text">Муж.</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="switch__text">Жен.</span>
+            </div>
+            <textarea placeholder="Сообщение" class="form__input form__textarea"></textarea>
+            <button type="submit" class="form__send-button">Отправить</button>
+        </form>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

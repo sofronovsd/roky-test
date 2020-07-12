@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url("jose-jovena-WnSbhx0SaFA-unsplash 1.png") no-repeat center;
+    background-size: cover;
+}
+
+.dialog {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 201px;
+    height: 60px;
+    cursor: pointer;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.dialog_opened {
+    animation: open-dialog 2s forwards ease-in-out;
+}
+
+.dialog_closed {
+    animation: close-dialog 2s ease-in-out forwards;
+}
+
+.dialog__question {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 21px;
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    text-align: center;
+
+    color: #323232;
+}
+
+@keyframes open-dialog {
+    0% {
+        width: 201px;
+        height: 60px;
+    }
+    100% {
+        width: 450px;
+        height: 559px;
+        cursor: auto;
+    }
+}
+
+@keyframes close-dialog {
+    0% {
+        width: 450px;
+        height: 559px;
+        cursor: auto;
+    }
+    100% {
+        width: 201px;
+        height: 60px;
+    }
+}
+
+@keyframes hide-text {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes show-text {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes show-form {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    50% {
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes hide-form {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    50% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.dialog__question_hidden {
+    animation: hide-text 2s forwards ease-in-out;
+}
+
+.dialog__question_visible {
+    animation: show-text 2s forwards ease-in-out;
+}
+
+.form {
+    display: flex;
+    padding: 25px;
+    flex-direction: column;
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.form_visible {
+    animation: show-form 2s forwards ease-in-out;
+}
+
+.form_hidden {
+    animation: hide-form 2s forwards ease-in-out;
+}
+
+.form__close-button {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.form__close-button span {
+    position: absolute;
+    width: 20px;
+    height: 0;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(45deg);
+}
+
+.form__close-button span+span {
+    position: absolute;
+    width: 20px;
+    height: 0;
+
+    border: 1px solid #FFFFFF;
+    transform: rotate(-45deg);
+}
+
+.form__send-button {
+    width: 242px;
+    height: 57px;
+    cursor: pointer;
+    border: none;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.form__input {
+    height: 21px;
+    margin-bottom: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #323232;
+}
+
+.form__textarea {
+    height: 160px;
+}
+
+.form__input:focus {
+    outline: 0;
+}
+
+.form__input::placeholder {
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.switch__container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.switch__text {
+    margin: 0 5px;
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #333333;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #323232;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 29px;
+    width: 29px;
+    background: #333333;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
