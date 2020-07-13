@@ -16,8 +16,15 @@
                 <span></span>
                 <span></span>
             </div>
-            <input type="text" placeholder="Ваше имя" required class="form__input">
+            <div class="input-container">
+                <input type="text" placeholder="Ваше имя" required class="form__input">
+                <div class="requirements">
+                    Укажите имя
+                </div>
+            </div>
+            <div class="input-container">
             <input type="email" value="test@test.com" class="form__input">
+            </div>
             <div class="switch__container">
                 <span class="switch__text">Муж.</span>
                 <label class="switch">
@@ -26,7 +33,9 @@
                 </label>
                 <span class="switch__text">Жен.</span>
             </div>
+            <div class="input-container">
             <textarea placeholder="Сообщение" class="form__input form__textarea"></textarea>
+            </div>
             <button type="submit" class="form__send-button">Отправить</button>
         </form>
     </div>

@@ -186,20 +186,41 @@
     cursor: pointer;
     border: none;
 
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #323232;
+
     background: #FFFFFF;
     border-radius: 10px;
 }
 
 .form__input {
-    height: 21px;
-    margin-bottom: 40px;
+    width: 100%;
+    height: 26px;
     background: transparent;
     border: none;
     border-bottom: 1px solid #323232;
+
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #333333;
+}
+
+.input-container {
+    margin-bottom: 40px;
 }
 
 .form__textarea {
     height: 160px;
+    resize: none;
 }
 
 .form__input:focus {
@@ -271,4 +292,25 @@
 
 input:checked + .slider:before {
     transform: translateX(20px);
+}
+
+.form input:invalid:not(:focus) {
+    border-bottom: 1px solid #B03834;
+}
+
+.form input:invalid:not(:focus) ~ .requirements {
+    max-height: 200px;
+}
+
+.requirements {
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    font-family: Arial, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: rgba(170, 0, 0, 0.6);
 }
